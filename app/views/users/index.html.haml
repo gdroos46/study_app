@@ -1,0 +1,10 @@
+%h1 ユーザー一覧
+= link_to "ユーザー追加", new_user_path
+
+- @users.each do |user|
+  %ul
+    %li= user.name
+    %li= user.email
+    %li= user.tel
+  = link_to "編集", edit_user_path(user)
+  = link_to "削除", "/users/#{user.id}", method: :DELETE, data: {confirm: 'Are you sure?'}
