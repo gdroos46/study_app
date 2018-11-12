@@ -1,5 +1,6 @@
-= simple_form_for @user do |f|
-  = f.input :name
-  = f.input :email
-  = f.input :tel
-  = f.submit
+= link_to '登録', '#modal', data: {'remodal-target': 'modal'}
+.remodal{data: {remodal_id: "modal"}}
+  %button.remodal-close{data: {remodal_action: "close"}}
+  #modal__content
+    = render 'form', user: @user
+= link_to "トップページへ", root_path

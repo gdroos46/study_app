@@ -4,7 +4,12 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title StudyApp
     = csrf_meta_tags
+    %link{:rel => :stylesheet, :href => "../dist/remodal.css"}
+    %link{:rel => :stylesheet, :href => "../dist/remodal-default-theme.css"}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   %body
-    = yield
+    .remodal-bg
+      = yield
+  <script src = "~/../dist/remodal.min.js"> </script>
