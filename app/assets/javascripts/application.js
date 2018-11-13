@@ -15,6 +15,5 @@
 //= require parsley
 //= require parsley.i18n.ja
 //= require rails-ujs
-//= require turbolinks
 //= require remodal.min
 //= require_tree .

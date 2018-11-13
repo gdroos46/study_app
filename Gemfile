@@ -35,7 +35,6 @@ gem 'simple_form'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'parsley-rails'
-gem 'remodal-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
