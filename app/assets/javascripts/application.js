@@ -10,6 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require jquery_ujs
+//= require parsley
+//= require parsley.i18n.ja
 //= require rails-ujs
-//= require turbolinks
+//= require remodal.min
 //= require_tree .

@@ -11,5 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require remodal-default-theme
+ *= require remodal
+ *= require parsley
  *= require_self
  */
