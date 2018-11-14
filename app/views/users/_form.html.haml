@@ -1,4 +1,4 @@
-= simple_form_for user, html: {'data-parsley-validate' => '', 'parsley-use-html5-constraints' => false} do |f|
+= simple_form_for user, html: {'data-parsley-validate' => '', 'parsley-use-html5-constraints' => false, 'data-parsley-trigger' => "keyup focusout change input"} do |f|
   = f.input :name
   = f.input :email
   = f.input :tel

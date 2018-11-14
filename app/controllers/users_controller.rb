@@ -13,10 +13,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      redirect_to root_path
-    else
-      render :new
+
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to root_path notice: '登録に成功しました' }
+      else
+        format.html { render :new, notice: '登録に失敗しました' }
+      end
     end
   end
 
