@@ -32,6 +32,7 @@ gem 'simple_form'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'parsley-rails'
+gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
