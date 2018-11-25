@@ -1,5 +1,6 @@
 %h1 ユーザー一覧
 = link_to "ユーザー追加", new_user_path
+= link_to "ログアウト", destroy_user_session_path, method: :delete
 
 %table
   %thead
