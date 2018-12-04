@@ -34,6 +34,7 @@ gem 'jquery-ui-rails'
 gem 'parsley-rails'
 gem 'devise'
 gem 'erb2haml'
+gem 'cancancan'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
