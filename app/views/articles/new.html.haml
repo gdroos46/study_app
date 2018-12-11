@@ -1,0 +1,6 @@
+= link_to '登録', '#modal_article'
+.remodal{data: {remodal_id: "modal_article"}}
+  %button.remodal-close{data: {remodal_action: "close"}}
+  #modal__content
+    = render 'form', user: @article
+= link_to "トップページへ", root_path

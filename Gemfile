@@ -35,6 +35,7 @@ gem 'parsley-rails'
 gem 'devise'
 gem 'erb2haml'
 gem 'cancancan'
+gem 'carrierwave'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
