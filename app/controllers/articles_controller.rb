@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: %i[new edit create update destroy]
   load_and_authorize_resource
   load_and_authorize_resource through: :user
 
