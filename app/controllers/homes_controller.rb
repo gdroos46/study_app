@@ -3,6 +3,6 @@ class HomesController < ApplicationController
 
 
   def show
-    @articles = Article.all
+    @articles = Article.article_publish
   end
 end

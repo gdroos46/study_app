@@ -3,10 +3,17 @@
     = @user.name
     = @user.email
     = @user.tel
-
-  - @user.articles.each do |article|
+  - articles = @user.articles.article_publish
+  - articles.each do |article|
     .article_area
       = article.name
       = article.description
       = image_tag article.image
+  - if @user = current_user
+    - articles = @user.articles.article_draft
+    - articles.each do |article|
+      .article_area
+        = article.name
+        = article.description
+        = image_tag article.image
   = link_to "トップページへ", root_path
