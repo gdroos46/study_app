@@ -1,0 +1,9 @@
+%header
+  %h1 Study App
+  .header__user
+    - if current_user.present?
+      = link_to "#{current_user.name}", user_path(current_user)
+      = link_to "new", new_article_path
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
+    - else
+      = link_to "ログイン", user_session_path

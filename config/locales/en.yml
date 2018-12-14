@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  enumerize:
+    article:
+      status:
+        draft: "下書き"
+        publish: "公開"

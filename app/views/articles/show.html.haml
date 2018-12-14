@@ -1,0 +1,8 @@
+.article_show_page
+  .article__area
+    = @article.name
+    = @article.description
+    = image_tag @article.image
+  .article_user_area
+    = @article.user.name
+  = link_to "トップページへ", root_path

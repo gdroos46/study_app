@@ -1,0 +1,10 @@
+= render "layouts/header"
+- @articles.each do |article|
+  .article__area
+    = link_to article_path(article) do
+      = article.name
+      = article.description
+      = image_tag article.image
+    = link_to "edit", edit_article_path(article)
+    = link_to "destroy", article_path(article), method: :delete
+    = link_to "#{article.user.name}", user_path(article.user)
