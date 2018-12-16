@@ -1,0 +1,5 @@
+- comments.each do |comment|
+  .comment
+    = comment.text
+    = link_to "edit", edit_article_comment_path(comment.article)
+    = link_to "destroy", article_comment_path(comment.article), method: :delete

@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   # get 'homes', to: 'homes#show'
   root 'homes#show'
   resources :users, only: %i[show new edit create update destroy]
-  resources :articles, only: %i[show new edit create update destroy]
+  resources :articles, only: %i[show new edit create update destroy] do
+    resources :comments, only: %i[edit create update destroy]
+  end
 end

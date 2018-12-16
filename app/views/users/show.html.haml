@@ -3,12 +3,15 @@
     = @user.name
     = @user.email
     = @user.tel
-  - articles = @user.articles.article_publish
-  - articles.each do |article|
-    .article_area
-      = article.name
-      = article.description
-      = image_tag article.image
+  - if @user.articles.present?
+    - articles = @user.articles.article_publish
+    - articles.each do |article|
+      .article_area
+        = article.name
+        = article.description
+        = image_tag article.image
+      - if article.comments.present?
+        = render "comments/pickup", comments: article.comments
   - if @user = current_user
     - articles = @user.articles.article_draft
     - articles.each do |article|
