@@ -19,4 +19,6 @@
         = article.name
         = article.description
         = image_tag article.image
+        = link_to "edit", edit_article_path(article)
+        = link_to "destroy", article_path(article), method: :delete
   = link_to "トップページへ", root_path

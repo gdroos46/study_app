@@ -1,5 +1,24 @@
-- comments.each do |comment|
-  .comment
-    = comment.text
-    = link_to "edit", edit_article_comment_path(comment.article)
-    = link_to "destroy", article_comment_path(comment.article), method: :delete
+%table
+  %thead
+    %tr
+      %th COMMENT
+      %th
+      %th
+      %th
+  %tbody
+    - comments.each do |comment|
+      - if comment.status == "approved"
+        %tr
+          %td= comment.text
+          %td= link_to "edit", edit_article_comment_path(comment.article, comment)
+          %td= link_to "destroy", article_comment_path(comment.article, comment), method: :delete
+          %td= comment.status
+      - else
+        %tr
+          %td
+            - if comment.article.user = current_user
+              = simple_form_for comment, url: approve_article_comment_path(comment.article, comment) do |f|
+                =f.input :status, onchange: "submit(this.form)", input_html: {class: 'js-comment_status'}
+              %p= comment.status
+            - else
+              = comment.status

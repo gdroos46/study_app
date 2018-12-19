@@ -18,6 +18,15 @@ class CommentsController < ApplicationController
     end
   end
 
+  def update
+    @comment.update(comment_params)
+    if @comment.save
+      redirect_to article_path(@comment.article)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @comment.destroy
     respond_to do |format|
@@ -25,8 +34,24 @@ class CommentsController < ApplicationController
     end
   end
 
+  def approve
+    respond_to do |format|
+      if @comment.update_attributes(comment_status_params)
+        notice = 'ユーザ情報を更新しました'
+        format.html { redirect_to article_path(@comment.article), notice: '更新しました' }
+
+      else
+        format.html { redirect_to article_path(@comment.article), notice: '更新に失敗しました'}
+      end
+    end
+  end
+
   private
     def comment_params
       params.require(:comment).permit(:text)
+    end
+
+    def comment_status_params
+      params.require(:comment).permit(:status)
     end
 end
