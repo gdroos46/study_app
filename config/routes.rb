@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   resources :articles, only: %i[show new edit create update destroy] do
     resources :comments, only: %i[edit create update destroy] do
       member do
-        patch :approve
-        put :approve
+        get :approve
       end
     end
   end
