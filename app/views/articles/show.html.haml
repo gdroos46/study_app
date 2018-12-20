@@ -1,3 +1,4 @@
+= render "layouts/header"
 .article_show_page
   .article__area
     = @article.name
@@ -5,4 +6,10 @@
     = image_tag @article.image
   .article_user_area
     = @article.user.name
+.article_comment_area
+  = render 'comments/form', article: @article
+- if @article.comments.present?
+  .display_comments
+    = render "comments/pickup", comments: @article.comments
+
   = link_to "トップページへ", root_path

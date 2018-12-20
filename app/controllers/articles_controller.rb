@@ -3,8 +3,7 @@ class ArticlesController < ApplicationController
   load_and_authorize_resource
   load_and_authorize_resource through: :user
 
-  def show
-  end
+  def show; end
 
   def new; end
   def edit; end

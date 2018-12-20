@@ -1,10 +1,20 @@
 = render "layouts/header"
-- @articles.each do |article|
-  .article__area
-    = link_to article_path(article) do
-      = article.name
-      = article.description
-      = image_tag article.image
-    = link_to "edit", edit_article_path(article)
-    = link_to "destroy", article_path(article), method: :delete
-    = link_to "#{article.user.name}", user_path(article.user)
+%h2 記事一覧
+%table
+  %thead
+    %tr
+      %th 記事の名前
+      %th 記事の説明
+      %th 画像
+      %th
+      %th
+      %th user名前
+  %tbody
+    - @articles.each do |article|
+      %tr
+        %td= link_to "#{article.name}", article_path(article)
+        %td= simple_format(article.description)
+        %td= image_tag article.image
+        %td= link_to "edit", edit_article_path(article)
+        %td= link_to "destroy", article_path(article), method: :delete
+        %td= link_to "#{article.user.name}", user_path(article.user)

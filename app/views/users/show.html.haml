@@ -1,19 +1,27 @@
+= render "layouts/header"
 .user_show_page
   .user__area
     = @user.name
     = @user.email
     = @user.tel
-  - articles = @user.articles.article_publish
-  - articles.each do |article|
-    .article_area
-      = article.name
-      = article.description
-      = image_tag article.image
+  - if @user.articles.present?
+    - if articles = @user.articles.article_publish.presence
+      %h2 公開済み記事一覧
+      - articles.each do |article|
+        .article_area
+          = article.name
+          = simple_format(article.description)
+          = image_tag article.image
+        - if article.comments.present?
+          = render "comments/pickup", comments: article.comments
   - if @user = current_user
-    - articles = @user.articles.article_draft
-    - articles.each do |article|
-      .article_area
-        = article.name
-        = article.description
-        = image_tag article.image
+    - if articles = @user.articles.article_draft.presence
+      %h2 下書き記事一覧
+      - articles.each do |article|
+        .article_area
+          = article.name
+          = simple_format(article.description)
+          = image_tag article.image
+          = link_to "edit", edit_article_path(article)
+          = link_to "destroy", article_path(article), method: :delete
   = link_to "トップページへ", root_path

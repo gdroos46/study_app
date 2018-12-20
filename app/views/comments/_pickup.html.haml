@@ -1,0 +1,27 @@
+%table
+  %thead
+    %tr
+      %th COMMENT
+      %th
+      %th
+      %th
+  %tbody
+    - comments.each do |comment|
+      - if comment.status == "approved"
+        %tr
+          %td= simple_format(comment.text)
+          - if comment.user == current_user
+            %td= link_to "edit", edit_article_comment_path(comment.article, comment)
+            %td= link_to "destroy", article_comment_path(comment.article, comment), method: :delete
+          %td= comment.status
+      - else
+        %tr
+          %td
+            - if comment.article.user = current_user
+              / jsの場合 select
+              / = simple_form_for comment, url: approve_article_comment_path(comment.article, comment) do |f|
+              /   =f.input :status, onchange: "submit(this.form)", input_html: {class: 'js-comment_status'}
+              / %p= comment.status
+              = link_to "approved", approve_article_comment_path(comment.article, comment, status: "approved")
+            - else
+              = comment.status
