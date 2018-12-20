@@ -38,6 +38,7 @@ gem 'cancancan'
 gem 'carrierwave'
 gem 'enumerize'
 gem 'ransack'
+gem 'letter_opener'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
