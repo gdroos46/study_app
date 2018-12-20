@@ -1,5 +1,12 @@
 = render "layouts/header"
 %h2 記事一覧
+.search
+  %h3 検索
+  .search_field
+    = search_form_for(@q, url: root_path) do |f|
+      = f.label :name_cont
+      = f.search_field :name_cont
+      = f.submit
 %table
   %thead
     %tr
@@ -9,6 +16,7 @@
       %th
       %th
       %th user名前
+      %th= sort_link(@q, :name)
   %tbody
     - @articles.each do |article|
       %tr
@@ -18,3 +26,4 @@
         %td= link_to "edit", edit_article_path(article)
         %td= link_to "destroy", article_path(article), method: :delete
         %td= link_to "#{article.user.name}", user_path(article.user)
+        %td

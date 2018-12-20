@@ -3,6 +3,7 @@ class HomesController < ApplicationController
 
 
   def show
-    @articles = Article.article_publish
+    @q = Article.article_publish.ransack(params[:q])
+    @articles = @q.result
   end
 end

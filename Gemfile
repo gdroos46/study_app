@@ -37,6 +37,7 @@ gem 'erb2haml'
 gem 'cancancan'
 gem 'carrierwave'
 gem 'enumerize'
+gem 'ransack'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
