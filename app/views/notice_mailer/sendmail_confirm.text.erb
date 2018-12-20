@@ -1,0 +1,3 @@
+ユーザ名：<%= @user.name %>
+メールアドレス：<%= @user.email %>
+URL：<%= url_for( :host => 'localhost:3000', :controller => 'articles', :action => 'show', :id => @article ) %>
