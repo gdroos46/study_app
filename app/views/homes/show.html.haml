@@ -13,7 +13,7 @@
     - @articles.each do |article|
       %tr
         %td= link_to "#{article.name}", article_path(article)
-        %td= article.description
+        %td= simple_format(article.description)
         %td= image_tag article.image
         %td= link_to "edit", edit_article_path(article)
         %td= link_to "destroy", article_path(article), method: :delete

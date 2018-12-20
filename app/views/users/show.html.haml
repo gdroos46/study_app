@@ -10,7 +10,7 @@
       - articles.each do |article|
         .article_area
           = article.name
-          = article.description
+          = simple_format(article.description)
           = image_tag article.image
         - if article.comments.present?
           = render "comments/pickup", comments: article.comments
@@ -20,7 +20,7 @@
       - articles.each do |article|
         .article_area
           = article.name
-          = article.description
+          = simple_format(article.description)
           = image_tag article.image
           = link_to "edit", edit_article_path(article)
           = link_to "destroy", article_path(article), method: :delete

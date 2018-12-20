@@ -9,7 +9,7 @@
     - comments.each do |comment|
       - if comment.status == "approved"
         %tr
-          %td= comment.text
+          %td= simple_format(comment.text)
           - if comment.user == current_user
             %td= link_to "edit", edit_article_comment_path(comment.article, comment)
             %td= link_to "destroy", article_comment_path(comment.article, comment), method: :delete
