@@ -39,6 +39,7 @@ gem 'carrierwave'
 gem 'enumerize'
 gem 'ransack'
 gem 'letter_opener'
+gem 'rspec-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
