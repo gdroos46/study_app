@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 describe 'Artticle' do
+  let!(:user){ create(:user) }
 
   context 'データが正しい場合' do
     specify '正常に処理されること' do
-      article = Article.new(name: "title", description: "comment desdes")
+      article = Article.new(user: user, name: "title", description: "comment desdes")
       article.save
       expect(article.name).to eq "title"
     end
