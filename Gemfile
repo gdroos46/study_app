@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use sqlite3 as the database for Active Record
@@ -27,20 +26,21 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'haml-rails'
-gem 'simple_form'
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem 'parsley-rails'
-gem 'devise'
-gem 'erb2haml'
 gem 'cancancan'
 gem 'carrierwave'
+gem 'devise'
 gem 'enumerize'
-gem 'ransack'
-gem 'letter_opener'
-gem 'rspec-rails'
+gem 'erb2haml'
 gem "factory_bot_rails"
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'letter_opener'
+gem 'parsley-rails'
+gem 'ransack'
+gem 'rspec-rails'
+gem 'rubocop'
+gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -54,8 +54,8 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

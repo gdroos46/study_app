@@ -16,16 +16,16 @@ feature 'Userの作成' do
         click_button 'Sign up'
       }.to change(User, :count).by(1)
 
-
       user = User.last
       expect(current_path).to eq root_path
       expect(user.name).to eq "aaa"
     end
   end
+
   context 'データが正しくない場合' do
     scenario 'articleが作成できないこと' do
       fill_in 'user_name', with: 'aaa'
-      fill_in 'user_tel', with: '080' #正しくない値
+      fill_in 'user_tel', with: '080' # 正しくない値
       fill_in 'user_email', with: "example@example.com"
       fill_in 'user_password', with: '11111111'
       fill_in 'user_password_confirmation', with: '11111111'

@@ -12,14 +12,14 @@
 #   end
 # end
 
-#coding: utf-8
+# coding: utf-8
 
 class NoticeMailer < ActionMailer::Base
- default from: "from@example.com"
- def sendmail_confirm(user, article)
-   @user = user
-   @article = article
-   mail to:      "example@example.com",
+  default from: "from@example.com"
+  def sendmail_confirm(user, article)
+    @user = user
+    @article = article
+    mail to: "example@example.com",
         subject: "テストメール"
- end
+  end
 end

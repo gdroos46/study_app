@@ -4,6 +4,7 @@ class Articles::CommentsController < ApplicationController
   load_and_authorize_resource :article
 
   def show; end
+
   def edit; end
 
   def create

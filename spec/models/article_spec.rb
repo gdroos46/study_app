@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Artticle' do
-  let!(:user){ create(:user) }
+  let!(:user) { create(:user) }
 
   context 'データが正しい場合' do
     specify '正常に処理されること' do

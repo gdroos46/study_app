@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   def show; end
 
   def new; end
+
   def edit; end
 
   def create
@@ -20,6 +21,7 @@ class ArticlesController < ApplicationController
       end
     end
   end
+
   def update
     @article.update(article_params)
     if @article.save
@@ -38,5 +40,4 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:name, :description, :image, :status)
     end
-
 end
